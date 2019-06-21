@@ -72,6 +72,7 @@ export const postEditVideo = async (req, res) => {
 		body: { title, description }
 	} = req;
 	try {
+		// https://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate
 		await Video.findOneAndUpdate({ _id: id }, { title, description });
 		//console.log(title);
 		res.redirect(routes.videoDetail(id));
