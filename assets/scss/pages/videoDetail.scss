@@ -56,6 +56,13 @@
 				&:not(:last-child) {
 					margin-bottom: 15px;
 				}
+				span {
+					button {
+						border-radius: 40%;
+						margin-top: 5px;
+						cursor: pointer;
+					}
+				}
 			}
 		}
 	}
