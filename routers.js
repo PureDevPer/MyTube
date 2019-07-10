@@ -27,6 +27,14 @@ const GITHUB_CALLBACK = "/auth/github/callback";
 const FACEBOOK = "/auth/facebook";
 const FACEBOOK_CALLBACK = "/auth/facebook/callback";
 
+// Google
+const GOOGLE = "/auth/google";
+const GOOGLE_CALLBACK = "/auth/google/callback";
+
+// LinkedIn
+const LILNKEDIN = "/auth/linkedin";
+const LINKEDIN_CALLBACK = "/auth/linkedin/callback";
+
 // API
 const API = "/api";
 const REGISTER_VIEW = "/:id/view";
@@ -73,6 +81,10 @@ const routers = {
   me: ME,
   facebook: FACEBOOK,
   facebookCallback: FACEBOOK_CALLBACK,
+  google: GOOGLE,
+  googleCallback: GOOGLE_CALLBACK,
+  linkedin: LILNKEDIN,
+  linkedinCallback: LINKEDIN_CALLBACK,
   api: API,
   registerView: REGISTER_VIEW,
   addComment: ADD_COMMENT,

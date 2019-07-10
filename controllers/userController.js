@@ -103,6 +103,73 @@ export const postFacebookLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
+export const googleLogin = passport.authenticate("google", {
+  scope: ["profile"]
+});
+
+export const googleLoginCallback = async (_, __, profile, cb) => {
+  // console.log(profile);
+  const {
+    _json: { sub, name, picture }
+  } = profile;
+  console.log(sub, name, picture);
+  try {
+    const user = await User.findOne({ sub });
+    // console.log(user);
+    if (user) {
+      user.googleId = sub;
+      user.save();
+      return cb(null, user);
+    }
+
+    const newUser = await User.create({
+      googleId: sub,
+      name,
+      avatarUrl: picture
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    return cb(error);
+  }
+};
+
+export const postGoogleLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
+export const linkedinLogin = passport.authenticate("linkedin", {
+  state: "SOME STATE"
+});
+
+export const linkedinLoginCallback = async (_, __, profile, cb) => {
+  // console.log(profile);
+  const { id, displayName, photos, emails } = profile;
+  // console.log(id, displayName, emails[0].value, photos[0].value);
+  const email = emails[0].value;
+  const photo = photos[0].value;
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      user.linkedInId = id;
+      user.save();
+      return cb(null, user);
+    }
+    const newUser = await User.create({
+      email,
+      name: displayName,
+      linkedInId: id,
+      avatarUrl: photo
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    return cb(error);
+  }
+};
+
+export const postLinkedInLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const logout = (req, res) => {
   // To Do: Process Log out
   req.logout();
