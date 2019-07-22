@@ -1,6 +1,7 @@
 import passport from "passport";
 import GithubStrategy from "passport-github";
 import FacebookStrategy from "passport-facebook";
+import Instagram from "passport-instagram";
 import Google from "passport-google-oauth20";
 import LinkedIn from "passport-linkedin-oauth2";
 import routes from "./routers";
@@ -9,7 +10,8 @@ import {
   githubLoginCallback,
   facebookLoginCallback,
   googleLoginCallback,
-  linkedinLoginCallback
+  linkedinLoginCallback,
+  instagramLoginCallback
 } from "./controllers/userController";
 
 passport.use(User.createStrategy());
@@ -63,5 +65,31 @@ passport.use(
   )
 );
 
+const InstagramStrategy = Instagram;
+passport.use(
+  new InstagramStrategy(
+    {
+      clientID: process.env.IG_ID,
+      clientSecret: process.env.IG_SECRET,
+      callbackURL: `http://localhost:5000${routes.instagramCallback}`
+    },
+    instagramLoginCallback
+  )
+);
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+/*
+const userSerialize = User.serializeUser();
+const userDeserialize = User.deserializeUser();
+passport.serializeUser(function(userSerialize, done) {
+  // console.log(`User: ${userSerialize}`);
+  done(null, userSerialize);
+});
+
+passport.deserializeUser(function(userDeserialize, done) {
+  // console.log(userDeserialize);
+  done(null, userDeserialize);
+});
+*/

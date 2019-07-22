@@ -35,6 +35,10 @@ const GOOGLE_CALLBACK = "/auth/google/callback";
 const LILNKEDIN = "/auth/linkedin";
 const LINKEDIN_CALLBACK = "/auth/linkedin/callback";
 
+// Instagram
+const INSTAGRAM = "/auth/instagram";
+const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
+
 // API
 const API = "/api";
 const REGISTER_VIEW = "/:id/view";
@@ -85,6 +89,8 @@ const routers = {
   googleCallback: GOOGLE_CALLBACK,
   linkedin: LILNKEDIN,
   linkedinCallback: LINKEDIN_CALLBACK,
+  instagram: INSTAGRAM,
+  instagramCallback: INSTAGRAM_CALLBACK,
   api: API,
   registerView: REGISTER_VIEW,
   addComment: ADD_COMMENT,

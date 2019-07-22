@@ -170,6 +170,46 @@ export const postLinkedInLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
+export const instagramLogin = passport.authenticate("instagram");
+
+export const instagramLoginCallback = async (_, __, profile, cb) => {
+  // console.log(profile);
+  const {
+    _json: {
+      data: { id, username, profile_picture, full_name }
+    }
+  } = profile;
+
+  // console.log(id, username, profile_picture, full_name);
+
+  const instagramUserID = username;
+  const avatarUrl = profile_picture;
+  const name = full_name;
+  const instagramID = id;
+
+  try {
+    const user = await User.findOne({ instagramUserID });
+    if (user) {
+      user.instagramId = instagramID;
+      user.save();
+      return cb(null, user);
+    }
+
+    const newUser = await User.create({
+      instagramId: instagramID,
+      name,
+      avatarUrl
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    return cb(error);
+  }
+};
+
+export const postInstagramLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const logout = (req, res) => {
   // To Do: Process Log out
   req.logout();

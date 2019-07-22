@@ -16,7 +16,9 @@ import {
   googleLogin,
   postGoogleLogin,
   linkedinLogin,
-  postLinkedInLogin
+  postLinkedInLogin,
+  instagramLogin,
+  postInstagramLogin
 } from "../controllers/userController";
 import { onlyPublic, onlyPrivate } from "../middlewares";
 
@@ -61,6 +63,13 @@ globalRouter.get(
   routes.linkedinCallback,
   passport.authenticate("linkedin", { failureRedirect: "/login" }),
   postLinkedInLogin
+);
+
+globalRouter.get(routes.instagram, instagramLogin);
+globalRouter.get(
+  routes.instagramCallback,
+  passport.authenticate("instagram", { failureRedirect: "/login" }),
+  postInstagramLogin
 );
 
 export default globalRouter;

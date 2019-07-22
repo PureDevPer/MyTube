@@ -9,6 +9,8 @@ const UserSchema = new mongoose.Schema({
   githubId: Number,
   googleId: Number,
   linkedInId: String,
+  instagramId: Number,
+  instagramUsername: String,
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
