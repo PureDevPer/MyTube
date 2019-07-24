@@ -21,7 +21,9 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `http://localhost:5000${routes.githubCallback}`
+      callbackURL: process.env.PRODUCTION
+        ? `https://peaceful-lake-16104.herokuapp.com${routes.githubCallback}`
+        : `http://localhost:5000${routes.githubCallback}`
     },
     githubLoginCallback
   )
@@ -46,7 +48,9 @@ passport.use(
     {
       clientID: process.env.GG_ID,
       clientSecret: process.env.GG_SECRET,
-      callbackURL: `http://localhost:5000${routes.googleCallback}`
+      callbackURL: process.env.PRODUCTION
+        ? `https://peaceful-lake-16104.herokuapp.com${routes.googleCallback}`
+        : `http://localhost:5000${routes.googleCallback}`
     },
     googleLoginCallback
   )
@@ -58,7 +62,9 @@ passport.use(
     {
       clientID: process.env.LI_ID,
       clientSecret: process.env.LI_SECRET,
-      callbackURL: `http://localhost:5000${routes.linkedinCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://peaceful-lake-16104.herokuapp.com${routes.linkedinCallback}`
+        : `http://localhost:5000${routes.linkedinCallback}`,
       scope: ["r_emailaddress", "r_liteprofile"]
     },
     linkedinLoginCallback
@@ -71,7 +77,9 @@ passport.use(
     {
       clientID: process.env.IG_ID,
       clientSecret: process.env.IG_SECRET,
-      callbackURL: `http://localhost:5000${routes.instagramCallback}`
+      callbackURL: process.env.PRODUCTION
+        ? `https://peaceful-lake-16104.herokuapp.com${routes.instagramCallback}`
+        : `http://localhost:5000${routes.instagramCallback}`
     },
     instagramLoginCallback
   )
