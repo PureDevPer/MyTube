@@ -113,7 +113,9 @@ export const postFacebookLogin = (req, res) => {
 };
 
 export const googleLogin = passport.authenticate("google", {
-  scope: ["profile"]
+  scope: ["profile"],
+  successFlash: "Welcome",
+  failureFlash: "Can't log in at this time"
 });
 
 export const googleLoginCallback = async (_, __, profile, cb) => {
@@ -147,7 +149,9 @@ export const postGoogleLogin = (req, res) => {
 };
 
 export const linkedinLogin = passport.authenticate("linkedin", {
-  state: "SOME STATE"
+  state: "SOME STATE",
+  successFlash: "Welcome",
+  failureFlash: "Can't log in at this time"
 });
 
 export const linkedinLoginCallback = async (_, __, profile, cb) => {
@@ -179,7 +183,10 @@ export const postLinkedInLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const instagramLogin = passport.authenticate("instagram");
+export const instagramLogin = passport.authenticate("instagram", {
+  successFlash: "Welcome",
+  failureFlash: "Can't log in at this time"
+});
 
 export const instagramLoginCallback = async (_, __, profile, cb) => {
   // console.log(profile);
