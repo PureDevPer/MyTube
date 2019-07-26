@@ -34,7 +34,9 @@ passport.use(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `https://soft-bat-45.localtunnel.me${routes.facebookCallback}`,
+      callbackURL: process.env.PRODUCTION
+        ? `https://peaceful-lake-16104.herokuapp.com${routes.facebookCallback}`
+        : `http://localhost:5000${routes.facebookCallback}`,
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },
