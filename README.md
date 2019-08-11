@@ -1,6 +1,10 @@
 # MyTube
 
-Cloning Youtube with VanillaJS and NodeJS
+- Cloning Youtube with VanillaJS and NodeJS
+- https://peaceful-lake-16104.herokuapp.com/
+
+- Frond-End: ES 6, SaSS, WebPack, Pug [![ES6](https://img.shields.io/badge/Javascript-ES6-green.svg)](https://shields.io/)
+- Back-End: MongoDB, NodeJS, ES6, AWS S3, Heroku
 
 ## Pages:
 
