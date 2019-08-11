@@ -8,7 +8,7 @@ Cloning Youtube with Vanilla JavaScript including ES6 and NodeJS
 
 <p>
 
-[![ES6](https://img.shields.io/badge/Javascript-ES6-green.svg)](https://shields.io/) [![SaSS](https://img.shields.io/badge/SaSS-7.1.0-green.svg)](https://shields.io/) [![WebPack](https://img.shields.io/badge/WebPack-4.35.0-green.svg)](https://shields.io/) [![Pug](https://img.shields.io/badge/Pug-2.0.3-green.svg)](https://shields.io/)
+[![FontAwesome](https://img.shields.io/badge/FontAwesome-5.5.0-green.svg)](https://shields.io/) [![ES6](https://img.shields.io/badge/Javascript-ES6-green.svg)](https://shields.io/) [![SaSS](https://img.shields.io/badge/SaSS-7.1.0-green.svg)](https://shields.io/) [![WebPack](https://img.shields.io/badge/WebPack-4.35.0-green.svg)](https://shields.io/) [![Pug](https://img.shields.io/badge/Pug-2.0.3-green.svg)](https://shields.io/)
 
 </p>
 
