@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Cloning Youtube with Vanilla JavaScript and NodeJS
+Cloning Youtube with Vanilla JavaScript including ES6 and NodeJS
 
 <b>Front-End</b>
 
@@ -20,11 +20,11 @@ Cloning Youtube with Vanilla JavaScript and NodeJS
 
 </p>
 
-## Link
+## Project
 
 https://peaceful-lake-16104.herokuapp.com/
 
-## Pages:
+## Pages
 
 - [x] Home
 - [x] Join
@@ -41,3 +41,18 @@ https://peaceful-lake-16104.herokuapp.com/
 - [x] Upload
 - [x] Video Detail
 - [x] Edit Video
+
+## Features
+
+- MVC (Model, View, Controller)
+- Routing
+- Template using [![Pug](https://img.shields.io/badge/Pug-2.0.3-green.svg)](https://shields.io/)
+- Social Media Login using [![Passport](https://img.shields.io/badge/Passport-0.4.0-blue.svg)](https://shields.io/)
+  - Github Login
+  - Facebook Login
+  - LinkedIn Login
+- Upload Video
+- Record Video
+- Search Video
+- Comments
+- AJAX
