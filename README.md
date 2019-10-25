@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Cloning Youtube with Vanilla JavaScript including ES6 and NodeJS
+Youtube Replica with JavaScript including ES6+ and NodeJS
 
 <b>Front-End</b>
 
