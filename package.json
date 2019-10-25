@@ -1,6 +1,9 @@
 {
 	"name": "mytube",
 	"version": "1.0.0",
+	"engines": {
+		"node": "10.15.3"
+	},
 	"description": "Cloning Youtube with VanillaJS and NodeJS",
 	"main": "index.js",
 	"author": "Wooseok Kim",
